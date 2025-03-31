@@ -15,3 +15,7 @@ spring:
       hibernate:
     open-in-view: false
     show-sql: false
+
+logging:
+  level:
+    br.com.daviAlves22.Aprendendo_spring_boot_e_java: DEBUG

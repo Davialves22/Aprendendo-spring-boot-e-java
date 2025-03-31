@@ -3,12 +3,13 @@ package br.com.daviAlves22.Aprendendo_spring_boot_e_java.services;
 import br.com.daviAlves22.Aprendendo_spring_boot_e_java.exception.ResourceNotFoundException;
 import br.com.daviAlves22.Aprendendo_spring_boot_e_java.model.Person;
 import br.com.daviAlves22.Aprendendo_spring_boot_e_java.repository.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Logger;
 
 @Service
 public class PersonServices {
@@ -18,8 +19,7 @@ public class PersonServices {
     @Autowired
     PersonRepository repository;
 
-
-    private Logger logger = Logger.getLogger(PersonServices.class.getName());
+    private Logger logger = LoggerFactory.getLogger(PersonServices.class.getName());
 
     //listando todos os clientes
     public List<Person> findAll() {
