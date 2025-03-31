@@ -1,16 +1,34 @@
 package br.com.daviAlves22.Aprendendo_spring_boot_e_java.model;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "person")
 public class Person implements Serializable {
 
-    private static final long serialVersionUID = 1l;
+    private static final long serialVersionUID = 1L;
 
+    //mapeamento da entidade;
+
+    //nao precisa especificar
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    //os demais sim
+    @Column(name = "first_name", nullable = false, length = 80)//nao pode ser nulo
     private String firstName;
+
+    @Column(name = "last_name", nullable = false, length = 80)//nao pode ser nulo
     private String lastName;
+
+    @Column(nullable = false, length = 100)//nao pode ser nulo
     private String address;
+
+    @Column(nullable = false, length = 10)//nao pode ser nulo
     private String gender;
 
     public Person() {
